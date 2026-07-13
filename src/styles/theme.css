@@ -1,6 +1,6 @@
 @layer base {
   :root,
-  [data-theme='light'] {
+  [data-theme="light"] {
     --background: #f8fafc;
     --foreground: #0f1729;
     --primary: #925cf0;
@@ -15,7 +15,7 @@
     --skeleton-highlight-color: #c5c5df;
   }
 
-  [data-theme='dark'] {
+  [data-theme="dark"] {
     --background: #0f0d16;
     --foreground: #fcfcfe;
     --primary: #925cf0;
@@ -43,7 +43,7 @@
   --color-secondary-button: var(--secondary-button);
   --color-input: var(--input);
   --color-red-500: #ef4444;
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --color-skeleton-base: var(--skeleton-base-color);
   --color-skeleton-highlight: var(--skeleton-highlight-color);
 }

@@ -1,16 +1,16 @@
-import { RefreshCw } from 'lucide-react'
+import { RefreshCw } from "lucide-react";
 
-import { Button } from '../../shared/Button'
+import { Button } from "../../shared/Button";
 
 interface ErrorProps {
-  simulationId: string
-  message: string
-  onRetry: () => void
+  simulationId: string;
+  message: string;
+  onRetry: () => void;
 }
 
 export function Error({ simulationId, message, onRetry }: ErrorProps) {
   if (!simulationId || !message) {
-    return null
+    return null;
   }
 
   return (
@@ -25,5 +25,5 @@ export function Error({ simulationId, message, onRetry }: ErrorProps) {
         Tentar novamente
       </Button>
     </div>
-  )
+  );
 }

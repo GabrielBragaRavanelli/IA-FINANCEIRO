@@ -1,26 +1,26 @@
-import { ArrowLeft, ArrowRight, type LucideIcon } from 'lucide-react'
-import { type SyntheticEvent, useState } from 'react'
+import { ArrowLeft, ArrowRight, type LucideIcon } from "lucide-react";
+import { type SyntheticEvent, useState } from "react";
 
-import { Button } from '@/components/shared/Button'
-import { Input, type InputProps } from '@/components/shared/Input'
-import { formatCurrencyMask } from '@/utils/currency'
+import { Button } from "@/components/shared/Button";
+import { Input, type InputProps } from "@/components/shared/Input";
+import { formatCurrencyMask } from "@/Utils/currency";
 
 export interface FormStepProps {
-  id: string
-  icon: LucideIcon
-  title: string
-  question: string
-  inputProps: InputProps
+  id: string;
+  icon: LucideIcon;
+  title: string;
+  question: string;
+  inputProps: InputProps;
   submitButtonProps?: {
-    label: string
-    emojiIcon?: string
-  }
+    label: string;
+    emojiIcon?: string;
+  };
 }
 
 interface ActionsButtonsProps {
-  onBack: () => void
-  onNext: (value: string) => void
-  hideBackButton?: boolean
+  onBack: () => void;
+  onNext: (value: string) => void;
+  hideBackButton?: boolean;
 }
 
 export function FormStep({
@@ -33,17 +33,17 @@ export function FormStep({
   onBack,
   onNext,
 }: FormStepProps & ActionsButtonsProps) {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (!inputValue) {
-      return
+      return;
     }
 
-    onNext(inputValue)
-  }
+    onNext(inputValue);
+  };
 
   return (
     <div className="bg-card rounded-2xl p-6 shadow-[4px_4px_18px_0px_rgba(0,0,0,0.2)] sm:p-8">
@@ -62,7 +62,7 @@ export function FormStep({
           value={inputValue}
           onChange={(e) =>
             setInputValue(
-              inputProps.prefix === 'R$'
+              inputProps.prefix === "R$"
                 ? formatCurrencyMask(e.target.value)
                 : e.target.value,
             )
@@ -87,11 +87,11 @@ export function FormStep({
             disabled={!inputValue}
             className="order-1 flex-1 sm:order-2"
           >
-            {submitButtonProps?.label ?? 'Próximo'}
+            {submitButtonProps?.label ?? "Próximo"}
             {submitButtonProps?.emojiIcon}
           </Button>
         </div>
       </form>
     </div>
-  )
+  );
 }

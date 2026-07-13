@@ -1,7 +1,7 @@
-import { parseCurrency } from '@/utils/currency'
-import { calcMonthlySavings } from '@/utils/simulation'
+import { parseCurrency } from "@/Utils/currency";
+import { calcMonthlySavings } from "@/Utils/simulation";
 
-import type { SimulationRecord } from './simulation'
+import type { SimulationRecord } from "./simulation";
 
 const RESPONSE_SCHEMA = `{
   "feasibility": {
@@ -23,15 +23,15 @@ const RESPONSE_SCHEMA = `{
   "motivation": {
     "content": "<Mensagem final motivacional e personalizada, citando a meta pelo nome.>"
   }
-}`
+}`;
 
 export function buildAIPrompt(simulation: SimulationRecord) {
   const { income, expenses, debts, goalName, goalAmount, goalDeadline } =
-    simulation
+    simulation;
 
-  const monthlySavings = calcMonthlySavings(simulation)
+  const monthlySavings = calcMonthlySavings(simulation);
   const monthlySavingsNeeded =
-    parseCurrency(goalAmount) / parseInt(goalDeadline)
+    parseCurrency(goalAmount) / parseInt(goalDeadline);
 
   return `Você é um educador financeiro especializado em finanças pessoais. 
     Analise os dados abaixo e gere um diagnóstico financeiro personalizado com linguagem clara, didática e encorajadora, 
@@ -62,5 +62,5 @@ export function buildAIPrompt(simulation: SimulationRecord) {
     - Para o campo "feasibility.status", use os seguintes critérios:
       - "viable": saldo após reserva para a meta é maior ou igual a 0
       - "needs_adjustment": saldo negativo de até 20% do valor da economia mensal necessária
-      - "unfeasible": saldo negativo superior a 20% do valor da economia mensal necessária`
+      - "unfeasible": saldo negativo superior a 20% do valor da economia mensal necessária`;
 }

@@ -1,10 +1,10 @@
 interface StepProgressProps {
-  currentStep: number
-  totalSteps: number
+  currentStep: number;
+  totalSteps: number;
 }
 
 export function StepProgress({ currentStep, totalSteps }: StepProgressProps) {
-  const progress = (currentStep / totalSteps) * 100
+  const progress = (currentStep / totalSteps) * 100;
 
   return (
     <div className="mb-4">
@@ -23,5 +23,5 @@ export function StepProgress({ currentStep, totalSteps }: StepProgressProps) {
         />
       </div>
     </div>
-  )
+  );
 }

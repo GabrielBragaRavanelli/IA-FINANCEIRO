@@ -1,6 +1,6 @@
 interface PageHeroProps {
-  title: string
-  subtitle: string
+  title: string;
+  subtitle: string;
 }
 
 export function PageHero({ title, subtitle }: PageHeroProps) {
@@ -11,5 +11,5 @@ export function PageHero({ title, subtitle }: PageHeroProps) {
       </h1>
       <p className="text-muted-foreground mb-8 text-sm">{subtitle}</p>
     </>
-  )
+  );
 }
