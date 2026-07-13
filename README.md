@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+IA Financeiro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **IA Financeiro** é uma aplicação desenvolvida com **React**, **TypeScript** e **Inteligência Artificial**, criada para ajudar o usuário a organizar melhor sua vida financeira.
 
-Currently, two official plugins are available:
+A aplicação permite que o usuário informe sua renda, seus gastos, dívidas e uma meta financeira. Com base nesses dados, o sistema gera uma simulação e apresenta insights personalizados, ajudando a entender se a meta é viável e quais ajustes podem ser feitos para alcançá-la.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+- Criação de simulações financeiras;
+- Geração de análise personalizada com IA;
+- Exibição de resumo da simulação;
+- Histórico de simulações salvas;
+- Possibilidade de excluir simulações;
+- Página de detalhes com os insights gerados;
+- Chat com o Educador Financeiro;
+- Histórico de perguntas e respostas salvo no navegador.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+O projeto foi desenvolvido utilizando:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Google Gemini API
+- LocalStorage
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+## Como executar o projeto
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Para rodar o projeto na sua máquina, siga os passos abaixo:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+- git clone https://github.com/GabrielBragaRavanelli/IA-FINANCEIRO.git
+- cd IA-FINANCEIRO
+- npm install
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Depois, crie um arquivo .env na raiz do projeto e adicione sua chave da API ( Pegue a chave API, neste link --> https://aistudio.google.com/api-keys?project=gen-lang-client-0222594075 - Para criar uma chave, no canto inferiror esquerdo, a um símbolo de uma chave, no qual, ao clicar, será gerado o código da sua chave API. ):
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+- VITE_GEMINI_API_KEY=sua_chave_aqui
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+Por fim, execute:
+
+- npm run dev
+
+A aplicação será aberta no navegador pelo endereço indicado no terminal.
+
+## Melhorias implementadas
+
+Durante o desenvolvimento, foram adicionadas novas funcionalidades ao projeto, como a página de histórico de simulações e a conversa com o Educador Financeiro.
+
+Na página de histórico, o usuário consegue visualizar todas as simulações salvas, acessar os detalhes de cada uma e excluir registros quando desejar.
+
+Já no Educador Financeiro, o usuário pode fazer perguntas sobre a simulação realizada. A IA responde de forma clara e personalizada, e todo o histórico da conversa fica salvo para consulta posterior.
+
+
+## O que aprendi
+
+Com esse projeto, aprendi a trabalhar melhor com rotas no React, persistência de dados com LocalStorage, integração com inteligência artificial e criação de interfaces mais completas e responsivas.
+Também pratiquei a organização de componentes, o tratamento de carregamento e erro, além da criação de uma experiência mais útil para o usuário.
