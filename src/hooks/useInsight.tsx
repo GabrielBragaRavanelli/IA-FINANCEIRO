@@ -22,8 +22,6 @@ export const useInsight = (id: string) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Necessário o uso do useCallback pois temos que colocar essa função
-  // Como array de dependências do useEffect
   const fetchInsight = useCallback(
     async (simulationId: string) => {
       const simulation = getFormData(simulationId);
@@ -57,7 +55,6 @@ export const useInsight = (id: string) => {
   );
 
   useEffect(() => {
-    // Evita loop infinito de requisições para a API do Gemini
     if (insight || isLoading || error || isRequestPending.current) {
       return;
     }
