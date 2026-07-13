@@ -1,15 +1,16 @@
-import type { PropsWithChildren } from "react";
+/* eslint-disable prettier/prettier */
+import type { PropsWithChildren } from 'react'
 
-import type { InsightData } from "@/services/aiService";
+import type { InsightData } from '@/services/aiService'
 
 interface ContentProps {
-  insight: InsightData;
+  insight: InsightData
 }
 
 function Paragraph({ children }: PropsWithChildren) {
   return (
     <p className="text-muted-foreground text-sm leading-relaxed">{children}</p>
-  );
+  )
 }
 
 function SectionTitle({ children }: PropsWithChildren) {
@@ -17,7 +18,7 @@ function SectionTitle({ children }: PropsWithChildren) {
     <h3 className="text-foreground mt-5 mb-1.5 text-sm leading-relaxed font-semibold">
       {children}
     </h3>
-  );
+  )
 }
 
 function OrderedList({ items }: { items: string[] }) {
@@ -29,28 +30,28 @@ function OrderedList({ items }: { items: string[] }) {
         </li>
       ))}
     </ol>
-  );
+  )
 }
 
 const statusStyles = {
   viable: {
-    label: "Meta viável no prazo",
+    label: 'Meta viável no prazo',
     className:
-      "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
+      'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400',
   },
   needs_adjustment: {
-    label: "Ajuste necessário",
+    label: 'Ajuste necessário',
     className:
-      "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
+      'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
   },
   unfeasible: {
-    label: "Meta inviável no prazo",
-    className: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
+    label: 'Meta inviável no prazo',
+    className: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
   },
-};
+}
 
 export function Content({ insight }: ContentProps) {
-  const status = statusStyles[insight.feasibility.status] ?? null;
+  const status = statusStyles[insight.feasibility.status] ?? null
 
   return (
     <div className="lg:scrollbar-thin lg:max-h-93 lg:overflow-y-auto lg:pr-2 lg:[scrollbar-color:var(--border)_transparent]">
@@ -95,5 +96,5 @@ export function Content({ insight }: ContentProps) {
         <Paragraph>{insight.motivation.content}</Paragraph>
       </section>
     </div>
-  );
+  )
 }
