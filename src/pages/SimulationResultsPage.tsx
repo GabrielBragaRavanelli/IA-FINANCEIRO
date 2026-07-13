@@ -12,7 +12,7 @@ import { AIInsightsCard } from "@/components/features/SimulationResults/AIInsigh
 import { Card } from "@/components/features/SimulationResults/Card";
 import { PageHero } from "@/components/shared/PageHero";
 import { useSimulationStorage } from "@/hooks/useSimulationStorage";
-import { calcMonthlySavings } from "@/Utils/simulation";
+import { calcMonthlySavings } from "@/utils/simulation";
 
 export function SimulationResultsPage() {
   const { id } = useParams<{ id: string }>();

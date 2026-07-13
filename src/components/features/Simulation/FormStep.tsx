@@ -3,7 +3,7 @@ import { type SyntheticEvent, useState } from "react";
 
 import { Button } from "@/components/shared/Button";
 import { Input, type InputProps } from "@/components/shared/Input";
-import { formatCurrencyMask } from "@/Utils/currency";
+import { formatCurrencyMask } from "@/utils/currency";
 
 export interface FormStepProps {
   id: string;

@@ -1,5 +1,5 @@
-import { parseCurrency } from "@/Utils/currency";
-import { calcMonthlySavings } from "@/Utils/simulation";
+import { parseCurrency } from "@/utils/currency";
+import { calcMonthlySavings } from "@/utils/simulation";
 
 import type { SimulationRecord } from "./simulation";
 
