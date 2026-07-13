@@ -1,4 +1,4 @@
-IA Financeiro
+## IA Financeiro
 
 O **IA Financeiro** é uma aplicação desenvolvida com **React**, **TypeScript** e **Inteligência Artificial**, criada para ajudar o usuário a organizar melhor sua vida financeira.
 
