@@ -35,7 +35,7 @@ Para rodar o projeto na sua máquina, siga os passos abaixo:
 - cd IA-FINANCEIRO
 - npm install
 
-Depois, crie um arquivo .env na raiz do projeto e adicione sua chave da API ( Pegue a chave API, neste link --> https://aistudio.google.com/api-keys?project=gen-lang-client-0222594075 - Para criar uma chave, no canto inferiror esquerdo, a um símbolo de uma chave, no qual, ao clicar, será gerado o código da sua chave API. ):
+Depois, crie um arquivo .env na raiz do projeto e adicione sua chave da API ( Pegue a chave API neste link --> https://aistudio.google.com/api-keys?project=gen-lang-client-0222594075 - Para criar uma chave, no canto inferiror esquerdo, a um símbolo de uma chave, no qual, ao clicar, será gerado o código da sua chave API. ):
 
 - VITE_GEMINI_API_KEY=sua_chave_aqui
 
